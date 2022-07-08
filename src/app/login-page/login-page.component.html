@@ -1,0 +1,90 @@
+<div class="formCard">
+  <div class="loginFormContainer">
+    <h4>LOGIN</h4>
+    <!--                <form method="post" action="login" id="loginForm">-->
+    <form id="loginForm" (submit)="formSubmit($event)">
+      <label>
+        Username:<br />
+        <input
+          type="text"
+          name="username"
+          maxlength="50"
+          required
+        />
+        <br />
+      </label>
+      <label>
+        Password:<br />
+        <input
+          type="password"
+          name="password"
+          maxlength="50"
+          required
+        />
+      </label>
+      <div class="inputSubmit">
+        <input type="submit" value="LOGIN" />
+      </div>
+    </form>
+    <div class="formSwitch">
+      <p>
+        Need An Account?
+        <button id="register" (click)="changeToRegister()"><i>Register!</i></button>
+      </p>
+    </div>
+  </div>
+  <div class="registerFormContainer inactive">
+    <h4>REGISTER</h4>
+    <!--                <form method="post" action="register" id="registerForm">-->
+    <form id="registerForm" (submit)="formSubmit($event)">
+      <label>
+        First Name:<br />
+        <input
+          type="text"
+          name="firstname"
+          maxlength="100"
+          required
+        />
+        <br />
+      </label>
+      <label>
+        Last Name:<br />
+        <input
+          type="text"
+          name="lastname"
+          maxlength="100"
+          required
+        />
+        <br />
+      </label>
+      <label>
+        Username:<br />
+        <input
+          type="text"
+          name="username"
+          maxlength="50"
+          required
+        />
+        <br />
+      </label>
+      <label>
+        Password:<br />
+        <input
+          type="password"
+          name="password"
+          maxlength="50"
+          required
+        />
+      </label>
+      <div class="inputSubmit">
+        <input type="submit" value="REGISTER" />
+      </div>
+    </form>
+    <div class="formSwitch">
+      <p>
+        Already A User?
+        <button id="login" (click)="changeToLogin()"><i>Login!</i></button>
+      </p>
+    </div>
+  </div>
+</div>

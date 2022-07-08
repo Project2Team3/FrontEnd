@@ -1,0 +1,59 @@
+<div>
+  <div>
+    <h1>
+      <strong>User</strong>
+    </h1>
+  </div>
+  <div class="userCard">
+    <form #questionSetupForm id="questionSetupForm" (submit)="questionSetupSubmit($event)" >
+      <label>
+        Amount:<br />
+        <input
+          type="number"
+          value="amount"
+          max="50"
+          min="1"
+          required
+        />
+      </label>
+      <label>
+        Category:<br />
+        <select name="category" id="category">
+          <option value="">Any</option>
+          <option value="9">General Knowledge</option>
+          <option value="10">Books</option>
+        </select>
+      </label>
+      <label>
+        Difficulty:<br />
+        <select name="difficulty" id="difficulty">
+          <option value="">Any</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <label>
+        Type:<br />
+        <select name="type" id="type">
+          <option value="">Any</option>
+          <option value="boolean">True or False</option>
+          <option value="multiple">Multiple Choice</option>
+        </select>
+      </label>
+      <input type="submit" class="submit"/>
+    </form>
+
+    <div id="questionContainer" #questionContainer class="inactive">
+      <p [innerHTML]="questionText"></p>
+      <p>{{timeLeft}}</p>
+      <div id="individualQuestionContainer">
+        <div
+          *ngFor="let option of options"
+          (click)="optionSelected($event)"
+          [innerHTML]=option
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
