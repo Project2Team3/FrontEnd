@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {url} from "../../../environments/environment";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, throwError} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 import {User} from "../../models/user";
 
 const loginUrl = url + "/login"

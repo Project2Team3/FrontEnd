@@ -9,7 +9,7 @@ export class StartPageComponent {
 
   constructor() { }
 
-  active:string = "register"
+  active:string = "login"
 
   onChange(event: string):void{
     this.active = event

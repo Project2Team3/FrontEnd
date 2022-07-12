@@ -60,13 +60,13 @@ export class HomePageComponent {
 
   optionSelected(e:any) {
     if (this.questions[this.counter - 1].answer === e.target.outerText) {
+      console.log("Correct!")
       console.log(e.target.outerText, this.questions[this.counter - 1].answer)
-      this.counter === this.questions.length ? this.endApp() : this.showQuestionHandler();
-
     } else {
+      console.log("Incorrect!")
       console.log("Answer is:", this.questions[this.counter - 1].answer)
-      this.counter === this.questions.length ? this.endApp() : this.showQuestionHandler();
     }
+    this.counter === this.questions.length ? this.endApp() : this.showQuestionHandler();
   }
 
   endApp(){
