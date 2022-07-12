@@ -1,0 +1,4 @@
+<div class="formCard">
+  <app-login *ngIf="active === 'login'" [active]=active (activeChange) = "onChange($event)"></app-login>
+  <app-register *ngIf="active === 'register'" [active]=active (activeChange) = "onChange($event)"></app-register>
+</div>

@@ -5,28 +5,32 @@
     </h1>
   </div>
   <div class="userCard">
-    <form #questionSetupForm id="questionSetupForm" (submit)="questionSetupSubmit($event)" >
+    <form id="questionSetupForm" (submit)="questionSetup()" class="{{questionSetupActive}}">
       <label>
-        Amount:<br />
+        Amount:
+        <br />
         <input
           type="number"
-          value="amount"
+          name="amount"
           max="50"
           min="1"
           required
+          [(ngModel)]="amount"
         />
       </label>
       <label>
-        Category:<br />
-        <select name="category" id="category">
-          <option value="">Any</option>
-          <option value="9">General Knowledge</option>
-          <option value="10">Books</option>
+        Category:
+        <br />
+        <select name="category" id="category" [(ngModel)]="category">
+          <option value=0>Any</option>
+          <option value=9>General Knowledge</option>
+          <option value=10>Books</option>
         </select>
       </label>
       <label>
-        Difficulty:<br />
-        <select name="difficulty" id="difficulty">
+        Difficulty:
+        <br />
+        <select name="difficulty" id="difficulty" [(ngModel)]="difficulty">
           <option value="">Any</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
@@ -35,25 +39,25 @@
       </label>
       <label>
         Type:<br />
-        <select name="type" id="type">
+        <select name="type" id="type" [(ngModel)]="type">
           <option value="">Any</option>
           <option value="boolean">True or False</option>
           <option value="multiple">Multiple Choice</option>
         </select>
       </label>
-      <input type="submit" class="submit"/>
+      <button type="submit" class="submit">PLAY</button>
     </form>
-
-    <div id="questionContainer" #questionContainer class="inactive">
+    <div id="questionContainer" class="{{questionContainerActive}}">
       <p [innerHTML]="questionText"></p>
-      <p>{{timeLeft}}</p>
+      <p [innerText]="timeLeft"></p>
       <div id="individualQuestionContainer">
         <div
           *ngFor="let option of options"
           (click)="optionSelected($event)"
-          [innerHTML]=option
+          [innerHTML]="option"
         ></div>
       </div>
     </div>
   </div>
+
 </div>

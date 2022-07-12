@@ -1,0 +1,34 @@
+<div class="formContainer">
+  <h4>LOGIN</h4>
+  <form class="form" (ngSubmit)="loginUser()">
+    <label>
+      Username:
+      <br />
+      <input
+        [(ngModel)]="user.username"
+        type="text"
+        name="username"
+      />
+    </label>
+    <label>
+      Password:
+      <br />
+      <input
+        [(ngModel)]="user.password"
+        type="password"
+        name="password"
+      />
+    </label>
+    <div class="inputSubmit">
+      <button type="submit">{{loginText}}</button>
+    </div>
+  </form>
+  <div class="formSwitch">
+    <p>
+      Need An Account?
+      <button id="register" (click)="changeToRegister()">
+        <i>Register!</i>
+      </button>
+    </p>
+  </div>
+</div>

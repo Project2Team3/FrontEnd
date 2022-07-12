@@ -6,6 +6,8 @@ export const environment = {
   production: false
 };
 
+export const url = "http://54.226.62.51:8080/api"
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

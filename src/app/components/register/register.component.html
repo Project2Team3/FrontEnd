@@ -1,0 +1,51 @@
+<div class="formContainer">
+  <h4>REGISTER</h4>
+  <form class="form" id="registerForm">
+    <label>
+      Username:
+      <br />
+      <input
+        [(ngModel)]="user.username"
+        type="text"
+        name="username"
+        maxlength="50"
+        required
+      />
+    </label>
+    <label>
+      Password:
+      <br />
+      <input
+        [(ngModel)]="user.password"
+        type="password"
+        name="password"
+        maxlength="50"
+        required
+      />
+    </label>
+    <label>
+      Email:
+      <br />
+      <input [(ngModel)]="user.email" type="email" name="email" required />
+    </label>
+    <label>
+      Country:
+      <br />
+      <input
+        [(ngModel)]="user.country"
+        type="text"
+        name="country"
+        maxlength="3"
+      />
+    </label>
+    <div class="inputSubmit">
+      <button type="submit" (click)="registerUser()">{{registerText}}</button>
+    </div>
+  </form>
+  <div class="formSwitch">
+    <p>
+      Need An Account?
+      <button id="login" (click)="changeToLogin()"><i>Login!</i></button>
+    </p>
+  </div>
+</div>

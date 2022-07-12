@@ -12,7 +12,9 @@ body {
   flex-direction: column;
 }
 
-.userCard, .loginFormContainer{
+
+
+.userCard, .formContainer{
   border: #66FCF1 solid 5px;
   border-radius: 1em;
   padding: 30px;
