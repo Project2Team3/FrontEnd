@@ -1,18 +1,22 @@
 export class Question {
-  private static _questions:Question[] = [];
+  private static _questions: Question[] = [];
 
   private _answer: string;
   private _incorrectAnswers: string[];
   private _question: string;
   private _type: string;
 
-  constructor(answer: string, incorrectAnswers: string[], question: string, type: string) {
+  constructor(
+    answer: string,
+    incorrectAnswers: string[],
+    question: string,
+    type: string
+  ) {
     this._answer = answer;
     this._incorrectAnswers = incorrectAnswers;
     this._question = question;
     this._type = type;
   }
-
 
   static get questions(): Question[] {
     return this._questions;

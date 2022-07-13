@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
-import {url} from "../../../environments/environment";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {User} from "../../models/user";
+import { url } from '../../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-const loginUrl = url + "/login"
+const loginUrl = url + '/login';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type' : 'application/json'})
-  }
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  loginUser(username:string, password:string):Observable<User>{
-    const payload = {username:username, password:password}
-    return this.http.post<User>(loginUrl,payload, this.httpOptions)
+  loginUser(username: string, password: string): Observable<any> {
+    const payload = { username: username, password: password };
+    return this.http.post<any>(loginUrl, payload, { observe: 'response' });
   }
 }

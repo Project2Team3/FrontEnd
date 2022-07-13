@@ -1,19 +1,22 @@
-
-    <div class="userCard">
-      <div id="questionContainer">
-        <p [innerHTML]="questionText"></p>
-        <p [innerText]="timeLeft"></p>
-        <app-question-options
-          *ngIf="active === 'question'"
-          [options]="options"
-          (selected)="optionSelected($event)"
-        ></app-question-options>
-        <app-question-picked
-          *ngIf="active === 'picked'"
-          [answer]="answer"
-          [status]="status"
-          [yourAnswer]="yourAnswer"
-        >
-        </app-question-picked>
-      </div>
-    </div>
+<div class="userCard">
+  <div id="questionContainer" *ngIf="active !== 'initial'">
+    <p [innerHTML]="questionText"></p>
+    <p [innerText]="timeLeft"></p>
+    <app-question-options
+      *ngIf="active === 'question'"
+      [options]="options"
+      (selected)="optionSelected($event)"
+    ></app-question-options>
+    <app-question-picked
+      *ngIf="active === 'picked'"
+      [answer]="answer"
+      [status]="status"
+      [yourAnswer]="yourAnswer"
+    >
+    </app-question-picked>
+  </div>
+  <div *ngIf="active === 'initial'">
+    <h1>ARE YOU READY!!!!????</h1>
+  </div>
+  <app-signout-button></app-signout-button>
+</div>
