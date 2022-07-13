@@ -1,1 +1,46 @@
-<p>question-setup works!</p>
+<div>
+  <h6>Single</h6>
+  <form id="questionSetupForm" (submit)="questionSetup()">
+    <label>
+      Amount:
+      <br />
+      <input
+        type="number"
+        name="amount"
+        max="50"
+        min="1"
+        required
+        [(ngModel)]="amount"
+      />
+    </label>
+    <label>
+      Category:
+      <br />
+      <select name="category" id="category" [(ngModel)]="category">
+        <option value=0>Any</option>
+        <option value=9>General Knowledge</option>
+        <option value=10>Books</option>
+      </select>
+    </label>
+    <label>
+      Difficulty:
+      <br />
+      <select name="difficulty" id="difficulty" [(ngModel)]="difficulty">
+        <option value="">Any</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </label>
+    <label>
+      Type:<br />
+      <select name="type" id="type" [(ngModel)]="type">
+        <option value="">Any</option>
+        <option value="boolean">True or False</option>
+        <option value="multiple">Multiple Choice</option>
+      </select>
+    </label>
+    <button type="submit" class="submit">PLAY</button>
+  </form>
+
+</div>

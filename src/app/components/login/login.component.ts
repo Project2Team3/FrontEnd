@@ -19,13 +19,14 @@ export class LoginComponent {
 
   constructor(private loginService: LoginService, private router: Router) {
   }
+
   changeToRegister():void{
     this.activeChange.emit("register")
   };
 
   loginUser():void {
     this.loginService.loginUser(this.user.username,this.user.password).subscribe({
-      next: () => this.router.navigate(['/homePage']),
+      next: () => this.router.navigate(['/home']),
       error: () => {
         this.loginText = "INCORRECT"
         setTimeout(()=> this.loginText = "LOGIN", 3000)

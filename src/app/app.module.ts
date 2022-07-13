@@ -14,6 +14,9 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { FriendsPageComponent } from './pages/friends-page/friends-page.component';
 import { QuestionSetupComponent } from './components/question-setup/question-setup.component';
+import { QuestionsPageComponent } from './pages/questions-page/questions-page.component';
+import { QuestionOptionsComponent } from './components/question-options/question-options.component';
+import { QuestionPickedComponent } from './components/question-picked/question-picked.component';
 
 const routes: Routes = [
   {
@@ -35,6 +38,10 @@ const routes: Routes = [
   {
     path:"profile",
     component:ProfilePageComponent
+  },
+  {
+    path:"quiz",
+    component:QuestionsPageComponent
   }
   ];
 
@@ -51,6 +58,9 @@ const routes: Routes = [
     LeaderboardPageComponent,
     FriendsPageComponent,
     QuestionSetupComponent,
+    QuestionsPageComponent,
+    QuestionOptionsComponent,
+    QuestionPickedComponent,
   ],
     imports: [
         BrowserModule,

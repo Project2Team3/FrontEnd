@@ -1,0 +1,25 @@
+#questionSetupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 350px;
+  border-radius: 1em;
+  border: #66FCF1 solid 5px;
+}
+
+#questionSetupForm input, #questionSetupForm select {
+  width: 200px;
+  height: 30px;
+  border-radius: 0.25em;
+  border: none;
+}
+
+.submit {
+  width: 200px;
+  height: 30px;
+  border-radius: 0.25em;
+  border: none;
+  background-color: pink;
+}

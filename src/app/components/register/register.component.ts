@@ -24,7 +24,7 @@ export class RegisterComponent{
   };
   registerUser():void {
     this.userService.registerUser(this.user).subscribe({
-      next: () => this.router.navigate(['/homePage']),
+      next: () => this.router.navigate(['/home']),
       error: () => {
         this.registerText = "INVALID"
         setTimeout(() => this.registerText = "REGISTER", 3000)

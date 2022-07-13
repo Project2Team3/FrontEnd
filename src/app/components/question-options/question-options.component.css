@@ -1,0 +1,35 @@
+#individualQuestionContainer {
+  height: 300px;
+  border: solid aliceblue 5px;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+#individualQuestionContainer div {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25em;
+  margin: 0.5%;
+}
+
+#individualQuestionContainer div:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+#individualQuestionContainer div:first-child {
+  background-color: darkred;
+}
+#individualQuestionContainer div:nth-child(2) {
+  background-color: blue;
+}
+#individualQuestionContainer div:nth-child(3) {
+  background-color: green;
+}
+#individualQuestionContainer div:nth-child(4) {
+  background-color: darkgoldenrod;
+}
+
