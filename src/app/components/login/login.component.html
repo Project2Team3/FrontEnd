@@ -4,23 +4,15 @@
     <label>
       Username:
       <br />
-      <input
-        [(ngModel)]="user.username"
-        type="text"
-        name="username"
-      />
+      <input [(ngModel)]="user.username" type="text" name="username" />
     </label>
     <label>
       Password:
       <br />
-      <input
-        [(ngModel)]="user.password"
-        type="password"
-        name="password"
-      />
+      <input [(ngModel)]="user.password" type="password" name="password" />
     </label>
     <div class="inputSubmit">
-      <button type="submit">{{loginText}}</button>
+      <button type="submit">{{ loginText }}</button>
     </div>
   </form>
   <div class="formSwitch">
