@@ -1,1 +1,35 @@
-<p>profile-page works!</p>
+<div>
+
+  <div>
+
+    <h2 class="card-header text-center">{{title}}</h2>
+
+  </div>
+
+  <div class="card-body">
+
+    <ul class="list-group" *ngFor="let u of users">
+
+      <!--Display each user's id, firstname, lastname-->
+
+      <li class="list-group-item">First Name {{u.firstName}}</li>
+      <li class="list-group-item">Last Name {{u.lastName}}</li>
+      <li class="list-group-item">Username {{u.username}}</li>
+      <li class="list-group-item">Password {{u.password}}</li>
+
+
+    </ul>
+          <!--if there are no users, display the client message-->
+
+    <div *ngIf="users.length==0">
+
+      {{ClientMessage.message}}
+
+    </div>
+
+    <div>
+
+      <button class="btn-secondary btn-center" (click)="findAllUsers()">Fetch Users!</button>
+    </div>
+  </div>
+</div>
