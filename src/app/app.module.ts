@@ -20,6 +20,7 @@ import { QuestionPickedComponent } from './components/question-picked/question-p
 import { SignoutButtonComponent } from './components/signout-button/signout-button.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -65,6 +66,7 @@ const routes: Routes = [
     QuestionPickedComponent,
     SignoutButtonComponent,
     BackButtonComponent,
+    
   ],
   imports: [
     BrowserModule,

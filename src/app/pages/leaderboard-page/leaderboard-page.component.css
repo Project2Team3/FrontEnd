@@ -1,0 +1,43 @@
+li {
+    list-style-type: none;
+    color: #FF4949;
+    margin-left: 33%;
+    font-size: 1.5rem;
+}
+
+h1 {
+    color: #3AB0FF;
+}
+
+th {
+    color: #3AB0FF;
+}
+
+#points{
+    text-align: center;
+}
+
+.list {
+    color:#FF4949;
+}
+
+#test {
+    background-color: #bde9ba;
+    }
+
+.first{
+    color: red;
+}
+
+.second {
+    color: gold;
+}
+
+.third {
+    color: blue;
+}
+
+tr {
+    background-color: gold;
+}
+
