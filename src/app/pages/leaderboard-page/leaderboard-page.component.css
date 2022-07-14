@@ -41,3 +41,6 @@ tr {
     background-color: gold;
 }
 
+.container {
+  overflow-y: scroll;
+}

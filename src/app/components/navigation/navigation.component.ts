@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppComponent} from "../../app.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appComponent: AppComponent, private router: Router) {}
 
+  signOut(): void {
+    this.appComponent.signOut();
+    this.router.navigate(['/']);
+  }
   ngOnInit(): void {
   }
 

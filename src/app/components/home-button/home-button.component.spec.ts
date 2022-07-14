@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignoutButtonComponent } from './signout-button.component';
+import { HomeButtonComponent } from './home-button.component';
 
-describe('SignoutButtonComponent', () => {
-  let component: SignoutButtonComponent;
-  let fixture: ComponentFixture<SignoutButtonComponent>;
+describe('HomeButtonComponent', () => {
+  let component: HomeButtonComponent;
+  let fixture: ComponentFixture<HomeButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SignoutButtonComponent],
+      declarations: [HomeButtonComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SignoutButtonComponent);
+    fixture = TestBed.createComponent(HomeButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

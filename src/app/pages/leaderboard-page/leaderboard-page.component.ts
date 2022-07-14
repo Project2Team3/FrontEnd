@@ -11,12 +11,8 @@ export class LeaderboardPageComponent implements OnInit {
 
   title= "All Users";
   users: User[] =[];
-  leaders: User[] =[];
   
-
-  constructor(private userService: UserService) {
-
-   }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.findAllUsers()
@@ -25,13 +21,7 @@ export class LeaderboardPageComponent implements OnInit {
 
       this.users.sort(function(a, b) {
         return b.points - a.points;
-      });
-
-      
+      }); 
     })
-
   }
-
- 
-
 }
