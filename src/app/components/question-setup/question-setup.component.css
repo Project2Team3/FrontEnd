@@ -5,7 +5,7 @@
   justify-content: space-evenly;
   width: 250px;
   height: 350px;
-  border-radius: 1em;
+  border-radius: 0.5em;
   border: #66FCF1 solid 5px;
 }
 
@@ -23,3 +23,9 @@
   border: none;
   background-color: pink;
 }
+
+h4 {
+  text-align: center;
+
+}
+

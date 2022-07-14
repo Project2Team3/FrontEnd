@@ -21,6 +21,7 @@ import { SignoutButtonComponent } from './components/signout-button/signout-butt
 import { HomeButtonComponent } from './components/home-button/home-button.component';
 import { LeaderboardComponent} from "./components/leaderboard/leaderboard.component";
 
+
 const routes: Routes = [
   {
     path: '',
