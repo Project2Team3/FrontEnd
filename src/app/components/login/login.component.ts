@@ -1,35 +1,71 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {User} from "../../models/user";
-import {LoginService} from "../../services/loginService/login.service";
-import {Router} from "@angular/router";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '../../models/user';
+import { LoginService } from '../../services/loginService/login.service';
+import { Router } from '@angular/router';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
   @Input() active: string | undefined;
-  @Output() activeChange:EventEmitter<string> = new EventEmitter<string>()
+  @Output() activeChange: EventEmitter<string> = new EventEmitter<string>();
 
-  user:User = new User(0, ``,``,``,0,``);
+  user: User = new User(0, ``, ``, ``, 0, ``);
 
-  loginText: string = "LOGIN";
+  loginText: string = 'LOGIN';
+  isLoading: boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+  ) {}
+
+  changeToRegister(): void {
+    this.activeChange.emit('register');
   }
-  changeToRegister():void{
-    this.activeChange.emit("register")
-  };
 
-  loginUser():void {
-    this.loginService.loginUser(this.user.username,this.user.password).subscribe({
-      next: () => this.router.navigate(['/homePage']),
-      error: () => {
-        this.loginText = "INCORRECT"
-        setTimeout(()=> this.loginText = "LOGIN", 3000)
-      }
-    })
+  loginUser(): void {
+    if (!this.user.username.trim() || !this.user.password.trim()) {
+      this.loginText = 'FAILED';
+      setTimeout(() => (this.loginText = 'LOGIN'), 3000);
+      return;
+    }
+
+    this.isLoading = true;
+
+    this.loginService
+      .loginUser(this.user.username, this.user.password)
+      .subscribe({
+        next: (response) => {
+          this.isLoading = false;
+          const token = response.headers.get('user-token');
+          console.log(token)
+
+          sessionStorage.setItem('token', token);
+
+          let body = response.body;
+
+          sessionStorage.setItem(
+            'user',
+            JSON.stringify({
+              id: body.id,
+              username: body.username,
+              country: body.country,
+              points: body.points,
+              email: body.email,
+            })
+          );
+          console.log(sessionStorage.getItem("user"))
+          this.router.navigate(['/home']);
+        },
+        error: () => {
+          this.isLoading = false;
+          this.loginText = 'FAILED';
+          setTimeout(() => (this.loginText = 'LOGIN'), 3000);
+        },
+      });
   }
 }

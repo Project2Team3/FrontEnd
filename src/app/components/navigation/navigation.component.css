@@ -1,0 +1,39 @@
+nav {
+  height: 60px;
+  width: 400px;
+  border-radius: 0.5em;
+  border: #66FCF1 solid 5px;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-evenly;*/
+  margin-bottom: 2%;
+}
+
+a {
+  display: flex;
+  /*flex-grow: 1;*/
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+h2 {
+  text-align: center;
+  color: #E0E722;
+}
+
+h2 a{
+  width: 100%;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
