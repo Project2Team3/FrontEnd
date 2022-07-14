@@ -16,8 +16,8 @@ export class QuestionsPageComponent implements OnInit {
   answer: string = '';
   yourAnswer: string = '';
   status: string = '';
-  // currentUserString: any = sessionStorage.getItem('user');
-  // currentUser: any = JSON.parse(this.currentUserString);
+  currentUserString: any = sessionStorage.getItem('user');
+  pointsAccumulated: number = 0;
 
   questionText: string = '';
   timeLeft: number = 15;
@@ -57,8 +57,14 @@ export class QuestionsPageComponent implements OnInit {
       if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
+        if (this.pointsAccumulated - 10 < 0) {
+          this.status = "TIME'S UP! I'll give you mercy...";
+          this.pointsAccumulated = 0;
+        } else {
+          this.status = "TIME'S UP! -10 Points...";
+          this.pointsAccumulated -= 10;
+        }
         this.active = 'picked';
-        this.status = "TIME'S UP! -10 Points...";
         this.answer = 'Answer: ' + this.questions[this.counter - 1].answer;
         this.yourAnswer = '';
 
@@ -117,8 +123,15 @@ export class QuestionsPageComponent implements OnInit {
       points = this.timeLeft > 14 ? 100 : pointsGained;
       this.status = `CORRECT! +${Math.round(points)} Points...`;
       this.yourAnswer = '';
+      this.pointsAccumulated += Math.round(points);
     } else {
-      this.status = 'INCORRECT! -10 Points...';
+      if (this.pointsAccumulated - 10 < 0) {
+        this.status = "INCORRECT! I'll give you mercy...";
+        this.pointsAccumulated = 0;
+      } else {
+        this.status = 'INCORRECT! -10 Points...';
+        this.pointsAccumulated -= 10;
+      }
       this.yourAnswer = 'Your Answer: ' + e.target.outerText;
     }
 
@@ -161,9 +174,50 @@ export class QuestionsPageComponent implements OnInit {
   }
 
   endApp() {
+    let loading = true;
     clearInterval(this.interval);
     Question.setQuestions = [];
     this.counter = 0;
+    let currentUserJSON = JSON.parse(this.currentUserString);
+    console.log(currentUserJSON);
+    console.log('Accumulated: ', this.pointsAccumulated);
+    console.log(
+      'Total Points: ',
+      currentUserJSON.points + this.pointsAccumulated
+    );
+    let updatedUser: User;
+    this.userService.findUserById(currentUserJSON.id).subscribe({
+      next: (data: User) => {
+        let newUser: User = new User(
+          data.id,
+          data.username,
+          data.password,
+          data.country,
+          data.points + this.pointsAccumulated,
+          data.email
+        );
+        this.userService.updateUser(newUser).subscribe({
+          next: (data: User) => {
+            updatedUser = data;
+            console.log(updatedUser);
+            loading = false;
+          },
+        });
+      },
+    });
+    while (loading) {
+      console.log('hi');
+    }
+
     this.router.navigate(['/home']);
   }
+
+  /**
+   *   id: user.id,
+   *           username: user.username,
+   *           password: user.password,
+   *           country: user.country,
+   *           points: user.points,
+   *           email: user.email,
+   */
 }

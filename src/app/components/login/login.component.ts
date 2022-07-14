@@ -21,7 +21,6 @@ export class LoginComponent {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private appComponent: AppComponent
   ) {}
 
   changeToRegister(): void {
@@ -54,7 +53,7 @@ export class LoginComponent {
             JSON.stringify({
               id: body.id,
               username: body.username,
-              country: body.password,
+              country: body.country,
               points: body.points,
               email: body.email,
             })
