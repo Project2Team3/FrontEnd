@@ -19,6 +19,7 @@ import { QuestionOptionsComponent } from './components/question-options/question
 import { QuestionPickedComponent } from './components/question-picked/question-picked.component';
 import { SignoutButtonComponent } from './components/signout-button/signout-button.component';
 import { HomeButtonComponent } from './components/home-button/home-button.component';
+import { LeaderboardComponent} from "./components/leaderboard/leaderboard.component";
 
 const routes: Routes = [
   {
@@ -47,7 +48,6 @@ const routes: Routes = [
   },
 ];
 
-// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +65,7 @@ const routes: Routes = [
     QuestionPickedComponent,
     SignoutButtonComponent,
     HomeButtonComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
