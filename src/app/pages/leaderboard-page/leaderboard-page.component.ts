@@ -30,11 +30,6 @@ export class LeaderboardPageComponent implements OnInit {
       
     })
 
-    this.users.sort
-  
-  }
-
-  findAllUsers() {
   }
 
  
