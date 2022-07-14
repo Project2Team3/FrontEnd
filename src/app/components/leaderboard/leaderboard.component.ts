@@ -10,31 +10,9 @@ import { User } from 'src/app/models/user';
 })
 export class LeaderboardComponent implements OnInit {
 
-  title= "All Users";
-  users: User[] =[];
-  leaders: User[] =[];
-  
-
-  constructor(private userService: UserService) {
-
-   }
-
+  constructor() {
+  }
   ngOnInit(): void {
-    this.findAllUsers();
   }
-
-  findAllUsers() {
-    this.userService.findAllUsers()
-      .subscribe(data =>{
-        this.users=data;
-      })
-  
-   
-  
-  }
-
-
-
-
 }
 

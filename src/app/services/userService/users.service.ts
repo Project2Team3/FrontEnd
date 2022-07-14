@@ -51,10 +51,10 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
-  updateUser(user: User) {
-    this.http
+  updateUser(user: User): Observable<User> {
+    return this.http
       .post<User>(
-        `${userUrl}/update`,
+        `${userUrl}/add`,
         {
           id: user.id,
           username: user.username,

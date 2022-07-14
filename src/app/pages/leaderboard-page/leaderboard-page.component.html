@@ -1,10 +1,5 @@
 <div class="container">
   <h1>All Time Leaders</h1>
-  <!-- <ul class="list-group" *ngFor="let u of users"> -->
-  <!-- Display each user's id, firstname, lastname...-->
-  <!-- <li>{{ u.username }} {{ u.points }}</li>
-  </ul> -->
-
   <Table class="table table-dark" id="test">
     <thead>
       <tr>
@@ -12,7 +7,6 @@
         <th>Player</th>
         <th>Points</th>
       </tr>
-
       <tr
         class="list"
         *ngFor="let u of users; let i = index"
