@@ -1,0 +1,7 @@
+<div id="individualQuestionContainer">
+  <div
+    *ngFor="let option of options"
+    (click)="optionSelected($event)"
+    [innerHTML]="option"
+  ></div>
+</div>

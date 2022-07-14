@@ -21,9 +21,26 @@ body {
 .userCard, .formContainer{
   border: #66FCF1 solid 5px;
   border-radius: 1em;
-  padding: 30px;
+  padding: 20px;
 }
 
 .inactive {
   display: none !important;
+}
+
+a:hover, button:hover{
+  color: black;
+  opacity: 0.5;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
 }
