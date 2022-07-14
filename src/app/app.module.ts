@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { StartPageComponent } from './pages/start-page/start-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { FriendsPageComponent } from './pages/friends-page/friends-page.component';
@@ -56,6 +57,7 @@ const routes: Routes = [
     StartPageComponent,
     RegisterComponent,
     NavigationComponent,
+    LeaderboardComponent,
     ProfilePageComponent,
     LeaderboardPageComponent,
     FriendsPageComponent,
