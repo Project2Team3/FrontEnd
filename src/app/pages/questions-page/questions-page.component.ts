@@ -70,18 +70,6 @@ export class QuestionsPageComponent implements OnInit {
 
         clearInterval(this.interval);
 
-        // this.currentUser.points -= 10;
-        // console.log(
-        //   `The user, ${this.currentUser} is getting ${-10} for a total of ${
-        //     this.currentUser.points
-        //   }`
-        // );
-        // this.appComponent.currentUser!.points -= 10;
-        // console.log(this.appComponent.currentUser)
-        // if (this.appComponent.currentUser instanceof User) {
-        //   this.userService.updateUser(this.appComponent.currentUser)
-        // }
-
         setTimeout(() => {
           this.timeLeft = 15;
           this.counter === this.questions.length
@@ -135,37 +123,6 @@ export class QuestionsPageComponent implements OnInit {
       this.yourAnswer = 'Your Answer: ' + e.target.outerText;
     }
 
-    // sessionStorage.setItem(
-    //   'user',
-    //   JSON.stringify({
-    //     id: this.currentUser.id,
-    //     username: this.currentUser.username,
-    //     country: this.currentUser.password,
-    //     points: this.currentUser.points + Math.round(points),
-    //     email: this.currentUser.email,
-    //   })
-    // );
-
-    // let password: string = '';
-    // await this.userService.findUserById(this.currentUser.id).subscribe({
-    //   next: (data: User) => {
-    //     password = data.password;
-    //   },
-    // });
-
-    // let newUser: User = new User(
-    //   this.currentUser.id,
-    //   this.currentUser.username,
-    //   password,
-    //   this.currentUser.country,
-    //   this.currentUser.points + Math.round(points),
-    //   this.currentUser.email
-    // );
-
-    // console.log(newUser);
-
-    // this.userService.updateUser(newUser);
-
     setTimeout(() => {
       this.counter === this.questions.length
         ? this.endApp()
@@ -178,46 +135,32 @@ export class QuestionsPageComponent implements OnInit {
     clearInterval(this.interval);
     Question.setQuestions = [];
     this.counter = 0;
-    let currentUserJSON = JSON.parse(this.currentUserString);
-    console.log(currentUserJSON);
-    console.log('Accumulated: ', this.pointsAccumulated);
-    console.log(
-      'Total Points: ',
-      currentUserJSON.points + this.pointsAccumulated
-    );
-    let updatedUser: User;
-    this.userService.findUserById(currentUserJSON.id).subscribe({
-      next: (data: User) => {
-        let newUser: User = new User(
-          data.id,
-          data.username,
-          data.password,
-          data.country,
-          data.points + this.pointsAccumulated,
-          data.email
-        );
-        this.userService.updateUser(newUser).subscribe({
-          next: (data: User) => {
-            updatedUser = data;
-            console.log(updatedUser);
-            loading = false;
-          },
-        });
-      },
-    });
-    while (loading) {
-      console.log('hi');
-    }
+
+    // let currentUserJSON = JSON.parse(this.currentUserString);
+    // let updatedUser: User;
+    // this.userService.findUserById(currentUserJSON.id).subscribe({
+    //   next: (data: User) => {
+    //     let newUser: User = new User(
+    //       data.id,
+    //       data.username,
+    //       data.password,
+    //       data.country,
+    //       data.points + this.pointsAccumulated,
+    //       data.email
+    //     );
+    //     this.userService.updateUser(newUser).subscribe({
+    //       next: (data: User) => {
+    //         updatedUser = data;
+    //         console.log(updatedUser);
+    //         loading = false;
+    //       },
+    //     });
+    //   },
+    // });
+
+    // while (loading) {
+    // }
 
     this.router.navigate(['/home']);
   }
-
-  /**
-   *   id: user.id,
-   *           username: user.username,
-   *           password: user.password,
-   *           country: user.country,
-   *           points: user.points,
-   *           email: user.email,
-   */
 }

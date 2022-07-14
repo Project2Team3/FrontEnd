@@ -1,1 +1,22 @@
-<p>leaderboard-page works!</p>
+<div class="container">
+  <h1>All Time Leaders</h1>
+  <Table class="table table-dark" id="test">
+    <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Player</th>
+      <th>Points</th>
+    </tr>
+
+    <tr
+      class="list"
+      *ngFor="let u of users; let i = index"
+      [style.color]="(i + 1) % 2 == 0 ? 'red' : 'gold'"
+    >
+      <td>{{ i + 1 }}</td>
+      <td>{{ u.username }}</td>
+      <td id="points">{{ u.points }}</td>
+    </tr>
+    </thead>
+  </Table>
+</div>

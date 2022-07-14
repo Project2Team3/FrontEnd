@@ -23,8 +23,17 @@ h3 a{
   width: 100%;
 }
 
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
 
-
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
 
 
 
