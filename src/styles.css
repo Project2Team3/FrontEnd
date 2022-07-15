@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .inactive {
@@ -50,4 +51,8 @@ a:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+input, select {
+  color: black;
 }
