@@ -2,6 +2,7 @@
   <div
     *ngFor="let option of options"
     (click)="optionSelected($event)"
+    id="{{option}}"
     [innerHTML]="option"
   ></div>
 </div>

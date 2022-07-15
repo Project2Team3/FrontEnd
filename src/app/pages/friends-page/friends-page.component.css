@@ -1,1 +1,6 @@
-
+#switchMode {
+  display: inline;
+  font-size: 10px;
+  color: pink;
+  font-style: italic;
+}

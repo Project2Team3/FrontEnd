@@ -11,7 +11,7 @@ export class LeaderboardPageComponent implements OnInit {
 
   title= "All Users";
   users: User[] =[];
-  
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
