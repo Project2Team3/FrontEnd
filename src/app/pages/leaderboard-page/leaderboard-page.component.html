@@ -1,7 +1,14 @@
-<div class="container">
-  <h1>All Time Leaders</h1>
-  <Table class="table table-dark" id="test">
-    <thead>
+<div>
+  <h1>
+    <strong>Leaderboard</strong>
+  </h1>
+</div>
+<div class="userCard">
+  <app-navigation></app-navigation>
+  <div class="container">
+<!--    <h1>All Time Leaders</h1>-->
+    <Table class="table table-dark" id="test">
+      <thead>
       <tr>
         <th>Rank</th>
         <th>Player</th>
@@ -16,6 +23,8 @@
         <td>{{ u.username }}</td>
         <td id="points">{{ u.points }}</td>
       </tr>
-    </thead>
-  </Table>
+      </thead>
+    </Table>
+  </div>
 </div>
+

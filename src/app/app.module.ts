@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { StartPageComponent } from './pages/start-page/start-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { FriendsPageComponent } from './pages/friends-page/friends-page.component';
@@ -17,9 +18,7 @@ import { QuestionSetupComponent } from './components/question-setup/question-set
 import { QuestionsPageComponent } from './pages/questions-page/questions-page.component';
 import { QuestionOptionsComponent } from './components/question-options/question-options.component';
 import { QuestionPickedComponent } from './components/question-picked/question-picked.component';
-import { SignoutButtonComponent } from './components/signout-button/signout-button.component';
 import { HomeButtonComponent } from './components/home-button/home-button.component';
-import { LeaderboardComponent} from "./components/leaderboard/leaderboard.component";
 
 
 const routes: Routes = [
@@ -57,6 +56,7 @@ const routes: Routes = [
     StartPageComponent,
     RegisterComponent,
     NavigationComponent,
+    LeaderboardComponent,
     ProfilePageComponent,
     LeaderboardPageComponent,
     FriendsPageComponent,
@@ -64,7 +64,6 @@ const routes: Routes = [
     QuestionsPageComponent,
     QuestionOptionsComponent,
     QuestionPickedComponent,
-    SignoutButtonComponent,
     HomeButtonComponent,
     LeaderboardComponent
   ],
