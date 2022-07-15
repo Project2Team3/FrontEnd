@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: flex-start; */
 }
 
 
@@ -53,4 +53,8 @@ a:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
+}
+
+input, select {
+  color: black;
 }

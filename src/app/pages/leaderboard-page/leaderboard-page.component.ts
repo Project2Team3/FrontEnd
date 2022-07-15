@@ -20,8 +20,10 @@ export class LeaderboardPageComponent implements OnInit {
       this.users=data;
 
       this.users.sort(function(a, b) {
-        return b.points - a.points;
-      }); 
+        return b.points - a.points; 
+      });
+
+      this.users= this.users.slice(0,10);  
     })
   }
 }
