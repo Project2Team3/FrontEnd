@@ -9,13 +9,10 @@ import { AppComponent } from '../../app.component';
 export class NavigationComponent implements OnInit {
 
   constructor(private appComponent: AppComponent) {}
-  signOut(): void {
-    this.appComponent.signOut();
-  }
-  
+
   ngOnInit(): void {
   }
-  
+
   signOut(): void {
     this.appComponent.signOut();
   }
