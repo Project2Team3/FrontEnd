@@ -105,8 +105,7 @@ export class QuestionsPageComponent implements OnInit {
     this.active = 'picked';
     this.answer = 'Answer: ' + this.questions[this.counter - 1].answer;
     let points = -10;
-
-    if (this.questions[this.counter - 1].answer === e.target.outerText) {
+    if (this.questions[this.counter - 1].answer === e.target.id) {
       let pointsGained = 50.0 + (this.timeLeft / 14.0) * 50.0;
       points = this.timeLeft > 14 ? 100 : pointsGained;
       this.status = `CORRECT! +${Math.round(points)} Points...`;

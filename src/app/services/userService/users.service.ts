@@ -35,6 +35,7 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
+  // add validation
   registerUser(user: User): Observable<User> {
     return this.http
       .post<User>(
