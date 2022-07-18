@@ -52,6 +52,7 @@ export class UserService {
         .pipe(catchError(this.handleError));
   }
 
+
   updateUser(user: User): Observable<User> {
     return this.http
       .post<User>(
