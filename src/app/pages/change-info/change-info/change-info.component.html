@@ -1,0 +1,27 @@
+<div class="userCard">
+  <app-navigation></app-navigation>
+
+  <li class="list-group-item">Username: {{user.username}}</li>
+  <!-- <li class="list-group-item">Current Password: {{user.password}}</li> -->
+
+  <form>
+  <label>
+   New Password:
+    <br />
+    <input
+      [(ngModel)]="user.password"
+      type="password"
+      name="password"
+      maxlength="50"
+      required
+    />
+  </label>
+
+  <div class="inputSubmit">
+    <button type="submit" (click)="changePassword()">change</button>
+  </div>
+</form>
+
+<a routerLink="/profile"><strong>Back</strong></a>
+
+</div>

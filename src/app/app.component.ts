@@ -14,4 +14,6 @@ export class AppComponent {
     sessionStorage.setItem('user', '');
     window.location.reload();
   }
+
+
 }
