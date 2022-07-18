@@ -1,17 +1,23 @@
 <div>
   <h1>
-    <strong>Friends</strong>
+    <strong>{{title}}</strong>
+    <a id="switchMode" (click)="changeTitle()">(switch)</a>
   </h1>
 </div>
 <div class="userCard">
   <app-navigation></app-navigation>
-  <h3>Friends</h3>
-  <ul>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-  </ul>
+  <div id="friendsList">
+    <input>
+    <div>Friend One</div>
+    <div>Friend Two</div>
+    <div>Friend Three</div>
+    <div>Friend Four</div>
+  </div>
+  <div id="addFriendsList">
+    <input>
+    <div
+      *ngFor="let user of filteredUsers"
+    >{{user.username}}</div>
+
+  </div>
 </div>

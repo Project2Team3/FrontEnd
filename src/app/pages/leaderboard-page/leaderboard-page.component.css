@@ -1,7 +1,7 @@
 li {
     list-style-type: none;
     color: #FF4949;
-    margin-left: 33%;
+    margin-left: 20%;
     font-size: 1.5rem;
 }
 
@@ -14,7 +14,7 @@ th {
 }
 
 #points{
-    text-align: center;
+    text-align: left;
 }
 
 .list {
@@ -27,6 +27,7 @@ th {
 
 .first{
     color: red;
+    font-size: .1rem;
 }
 
 .second {
@@ -38,9 +39,21 @@ th {
 }
 
 tr {
-    background-color: gold;
+    background-color: #1F2833;
+}
+
+
+
+table {
+    width: 50%;
+    font-size: 1.6rem;
+    background-color: #1F2833;
+    margin: 0;
 }
 
 .container {
-  overflow-y: scroll;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
