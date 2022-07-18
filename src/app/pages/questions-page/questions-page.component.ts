@@ -1,9 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Question } from '../../models/question';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/userService/users.service';
 import { User } from '../../models/user';
-import {AppComponent} from "../../app.component";
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-questions-page',
@@ -12,7 +12,7 @@ import {AppComponent} from "../../app.component";
 })
 export class QuestionsPageComponent implements OnInit {
   currentUserString: any = sessionStorage.getItem('user');
-  currentUserJSON:any = {};
+  currentUserJSON: any = {};
 
   questions: Question[] = [];
   active: string = 'initial';
@@ -20,7 +20,7 @@ export class QuestionsPageComponent implements OnInit {
   yourAnswer: string = '';
   status: string = '';
   pointsAccumulated: number = 0;
-  color:string = '';
+  color: string = '';
 
   questionText: string = '';
   timeLeft: number = 15;
@@ -30,7 +30,7 @@ export class QuestionsPageComponent implements OnInit {
 
   // @ts-ignore
   interval: NodeJS.Timer;
-  buttonStatus: string = "Loading";
+  buttonStatus: string = 'Loading';
 
   constructor(
     private router: Router,
@@ -87,7 +87,6 @@ export class QuestionsPageComponent implements OnInit {
   showQuestionHandler() {
     this.active = 'question';
     clearInterval(this.interval);
-    console.log(this.questions, this.counter);
     this.options = (
       this.questions[this.counter].type === 'multiple'
         ? [
@@ -117,9 +116,9 @@ export class QuestionsPageComponent implements OnInit {
       this.yourAnswer = '';
       this.pointsAccumulated += Math.round(points);
     } else {
-      this.color = "red"
+      this.color = 'red';
       if (this.pointsAccumulated - 10 < 0) {
-        this.status = "INCORRECT!";
+        this.status = 'INCORRECT!';
         this.pointsAccumulated = 0;
       } else {
         this.status = 'INCORRECT! -10 Points...';
@@ -136,11 +135,11 @@ export class QuestionsPageComponent implements OnInit {
   }
 
   endApp() {
-    this.buttonStatus = "Loading"
+    this.buttonStatus = 'Loading';
     clearInterval(this.interval);
     Question.setQuestions = [];
     this.counter = 0;
-    this.active = "end";
+    this.active = 'end';
     this.currentUserJSON = JSON.parse(this.currentUserString);
     let updatedUser: User;
     this.userService.findUserById(this.currentUserJSON.id).subscribe({
@@ -153,16 +152,15 @@ export class QuestionsPageComponent implements OnInit {
           data.points + this.pointsAccumulated,
           data.email
         );
-        this.appComponent.updateSessionStorage(newUser)
+        this.appComponent.updateSessionStorage(newUser);
         this.userService.updateUser(newUser).subscribe({
           next: (data: User) => {
             updatedUser = data;
-            this.buttonStatus = "Done"
+            this.buttonStatus = 'Done';
           },
         });
       },
     });
-
   }
 
   onDoneButtonClick() {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from './models/user';
 import {Router} from "@angular/router";
 
 @Component({
@@ -31,6 +30,5 @@ export class AppComponent {
         email: body.email,
       })
     );
-    console.log(sessionStorage.getItem("user"))
   }
 }

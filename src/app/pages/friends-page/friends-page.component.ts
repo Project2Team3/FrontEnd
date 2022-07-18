@@ -55,8 +55,7 @@ export class FriendsPageComponent implements OnInit {
               return !this.existingFriends.get(user.username);
             }).slice(0,8)
             this.filterFriendsList()
-          },
-          error: err => console.log(err)
+          }
         });
       }
     })
@@ -80,8 +79,7 @@ export class FriendsPageComponent implements OnInit {
     })[0]
 
     this.friendService.addFriendByCurrentUserIdAndFriendId(this.currentUserJSON.id, friend.id).subscribe({
-      next:(message) => {
-        console.log(message)
+      next:() => {
       },
     }).add(()=>{
       window.location.reload()
