@@ -19,4 +19,6 @@ export class AppComponent {
     sessionStorage.setItem('user', '');
     this.router.navigate(['/'])
   }
+
+
 }

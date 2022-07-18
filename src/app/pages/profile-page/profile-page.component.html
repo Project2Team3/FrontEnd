@@ -4,10 +4,18 @@
   </h1>
 </div>
 <div class="userCard">
-      <app-navigation></app-navigation>
-      <li class="list-group-item">ID {{user.id}}</li>
-      <li class="list-group-item">Username {{user.username}}</li>
-      <li class="list-group-item">Password {{user.password}}</li>
-      <li class="list-group-item">Country {{user.country}}</li>
-      <li class="list-group-item">Email {{user.email}}</li>
+    <app-navigation></app-navigation>
+
+      <li class="list-group-item">ID: {{user.id}}</li>
+      <li class="list-group-item">Username: {{user.username}}</li>
+      <li class="list-group-item">Password: {{user.password}}
+      <a routerLink="/changeuserinfo"><strong>Change password</strong></a>
+      </li>
+      <li class="list-group-item">Country: {{user.country}}</li>
+      <li class="list-group-item">Points: {{user.points}}</li>
+
+      <li class="list-group-item">Email: {{user.email}}</li>
+
+
+
   </div>

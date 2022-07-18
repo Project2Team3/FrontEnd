@@ -22,7 +22,7 @@ export class LeaderboardPageComponent implements OnInit {
       this.users.sort(function(a, b) {
         return b.points - a.points; 
       });
-
+      
       this.users= this.users.slice(0,10);  
     })
   }

@@ -1,22 +1,30 @@
-import { AppComponent } from './../../app.component';
+import { Router } from '@angular/router';
+import { AppComponent } from './../../../app.component';
 import { UserService } from 'src/app/services/userService/users.service';
+import { User } from 'src/app/models/user';
 import { Component, OnInit } from '@angular/core';
-import {User} from "../../models/user";
+
 
 
 @Component({
-  selector: 'app-profile-page',
-  templateUrl: './profile-page.component.html',
-  styleUrls: ['./profile-page.component.css']
+  selector: 'app-change-info',
+  templateUrl: './change-info.component.html',
+  styleUrls: ['./change-info.component.css']
 })
-export class ProfilePageComponent implements OnInit {
+export class ChangeInfoComponent implements OnInit {
 
-  constructor(private userService:UserService, private appComponent:AppComponent){
+
+
+  constructor(private userService:UserService,
+
+    private appComponent:AppComponent,
+    private router:Router){
 
 
   }
   //user:User[] = new User[];
 
+  newpass: string= 'NEWPASS';
  user:User =new User(0,'','','',0,'');
  userString:string | null = sessionStorage.getItem("user");
 
@@ -40,8 +48,24 @@ export class ProfilePageComponent implements OnInit {
       }
     })
 
+
     // this.user= sessionStorage.getItem('user');
 
-   // this.user = JSON.parse(localStorage.getItem('user')!);
+  }
+
+  changePassword():void{
+
+    console.log(this.user.password);
+    this.userService.updateUser(this.user).subscribe({
+      next: (data) => {
+        console.log(data);
+
+      }
+    })
+
+    this.router.navigate(['/home']);
+
+
+
   }
 }
