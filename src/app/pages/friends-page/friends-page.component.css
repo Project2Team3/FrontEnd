@@ -4,3 +4,79 @@
   color: pink;
   font-style: italic;
 }
+
+#addFriendsList, #friendsList {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  flex-grow: 1;
+}
+
+.listInput {
+  width: 300px;
+  height: 40px;
+  border: solid red 5px;
+  border-radius: 0.5em;
+  align-self: center;
+  margin-bottom: 2%;
+}
+
+.listContainer {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.addFriendsListIndividual, .friendsListIndividual {
+  display: flex;
+  height: 40px;
+  border: aliceblue 3px solid;
+  margin-bottom: 2%;
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.addFriendsListIndividual:hover {
+  cursor: pointer;
+  border-color: green;
+  /*transition: background-color 0.5s;*/
+}
+.friendsListIndividual:hover {
+  cursor: pointer;
+  border-color: pink;
+  /*transition: background-color 0.5s;*/
+}
+
+#emptiness:hover{
+  cursor: default;
+  border-color: black;
+}
+
+.friendInfo {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.infoIndividual {
+  display: flex;
+  height: 60px;
+  border: aliceblue 3px solid;
+  margin-bottom: 2%;
+  border-radius: 0.5em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.infoIndividual:hover {
+  border-color: black;
+}
+
+#backInfo:hover{
+  cursor: pointer;
+  border-color: pink;
+  /*opacity: 0.5;*/
+  /*color: whitesmoke;*/
+}

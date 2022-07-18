@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Question } from '../../models/question';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/userService/users.service';
-import { AppComponent } from '../../app.component';
 import { User } from '../../models/user';
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: 'app-questions-page',
@@ -11,13 +11,16 @@ import { User } from '../../models/user';
   styleUrls: ['./questions-page.component.css'],
 })
 export class QuestionsPageComponent implements OnInit {
+  currentUserString: any = sessionStorage.getItem('user');
+  currentUserJSON:any = {};
+
   questions: Question[] = [];
   active: string = 'initial';
   answer: string = '';
   yourAnswer: string = '';
   status: string = '';
-  currentUserString: any = sessionStorage.getItem('user');
   pointsAccumulated: number = 0;
+  color:string = '';
 
   questionText: string = '';
   timeLeft: number = 15;
@@ -27,6 +30,7 @@ export class QuestionsPageComponent implements OnInit {
 
   // @ts-ignore
   interval: NodeJS.Timer;
+  buttonStatus: string = "Loading";
 
   constructor(
     private router: Router,
@@ -58,7 +62,7 @@ export class QuestionsPageComponent implements OnInit {
         this.timeLeft--;
       } else {
         if (this.pointsAccumulated - 10 < 0) {
-          this.status = "TIME'S UP! I'll give you mercy...";
+          this.status = "TIME'S UP!";
           this.pointsAccumulated = 0;
         } else {
           this.status = "TIME'S UP! -10 Points...";
@@ -105,6 +109,7 @@ export class QuestionsPageComponent implements OnInit {
     this.active = 'picked';
     this.answer = 'Answer: ' + this.questions[this.counter - 1].answer;
     let points = -10;
+
     if (this.questions[this.counter - 1].answer === e.target.id) {
       let pointsGained = 50.0 + (this.timeLeft / 14.0) * 50.0;
       points = this.timeLeft > 14 ? 100 : pointsGained;
@@ -112,8 +117,9 @@ export class QuestionsPageComponent implements OnInit {
       this.yourAnswer = '';
       this.pointsAccumulated += Math.round(points);
     } else {
+      this.color = "red"
       if (this.pointsAccumulated - 10 < 0) {
-        this.status = "INCORRECT! I'll give you mercy...";
+        this.status = "INCORRECT!";
         this.pointsAccumulated = 0;
       } else {
         this.status = 'INCORRECT! -10 Points...';
@@ -130,36 +136,36 @@ export class QuestionsPageComponent implements OnInit {
   }
 
   endApp() {
-    let loading = true;
+    this.buttonStatus = "Loading"
     clearInterval(this.interval);
     Question.setQuestions = [];
     this.counter = 0;
+    this.active = "end";
+    this.currentUserJSON = JSON.parse(this.currentUserString);
+    let updatedUser: User;
+    this.userService.findUserById(this.currentUserJSON.id).subscribe({
+      next: (data: User) => {
+        let newUser: User = new User(
+          data.id,
+          data.username,
+          data.password,
+          data.country,
+          data.points + this.pointsAccumulated,
+          data.email
+        );
+        this.appComponent.updateSessionStorage(newUser)
+        this.userService.updateUser(newUser).subscribe({
+          next: (data: User) => {
+            updatedUser = data;
+            this.buttonStatus = "Done"
+          },
+        });
+      },
+    });
 
-    // let currentUserJSON = JSON.parse(this.currentUserString);
-    // let updatedUser: User;
-    // this.userService.findUserById(currentUserJSON.id).subscribe({
-    //   next: (data: User) => {
-    //     let newUser: User = new User(
-    //       data.id,
-    //       data.username,
-    //       data.password,
-    //       data.country,
-    //       data.points + this.pointsAccumulated,
-    //       data.email
-    //     );
-    //     this.userService.updateUser(newUser).subscribe({
-    //       next: (data: User) => {
-    //         updatedUser = data;
-    //         console.log(updatedUser);
-    //         loading = false;
-    //       },
-    //     });
-    //   },
-    // });
+  }
 
-    // while (loading) {
-    // }
-
+  onDoneButtonClick() {
     this.router.navigate(['/home']);
   }
 }

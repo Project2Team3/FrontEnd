@@ -1,0 +1,6 @@
+button {
+  border: pink solid 3px;
+  background-color: inherit;
+  border-radius: 0.5em;
+  color: white;
+}

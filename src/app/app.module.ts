@@ -21,7 +21,6 @@ import { QuestionPickedComponent } from './components/question-picked/question-p
 import { HomeButtonComponent } from './components/home-button/home-button.component';
 import { ChangeInfoComponent } from './pages/change-info/change-info/change-info.component';
 
-
 const routes: Routes = [
   {
     path: '',

@@ -1,10 +1,10 @@
 export class Question {
   private static _questions: Question[] = [];
 
-  private _answer: string;
-  private _incorrectAnswers: string[];
-  private _question: string;
-  private _type: string;
+  private readonly _answer: string;
+  private readonly _incorrectAnswers: string[];
+  private readonly _question: string;
+  private readonly _type: string;
 
   constructor(
     answer: string,
@@ -29,32 +29,13 @@ export class Question {
   get answer(): string {
     return this._answer;
   }
-
-  set setAnswer(value: string) {
-    this._answer = value;
-  }
-
   get incorrectAnswers(): string[] {
     return this._incorrectAnswers;
   }
-
-  set setIncorrectAnswers(value: string[]) {
-    this._incorrectAnswers = value;
-  }
-
   get question(): string {
     return this._question;
   }
-
-  set setQuestion(value: string) {
-    this._question = value;
-  }
-
   get type(): string {
     return this._type;
-  }
-
-  set setType(value: string) {
-    this._type = value;
   }
 }
