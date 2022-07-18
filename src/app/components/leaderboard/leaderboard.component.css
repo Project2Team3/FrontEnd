@@ -1,13 +1,39 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
 #carouselLeaderboard {
     border-radius: 0.5em;
     border: #66FCF1 solid 5px;
     align-items: center;
     justify-content: center;
-    width: 750px; 
-    margin: 15px;
+    width: 750px;
+    margin-top: 2%;
 }
 
 p {
-    color: #FF4949;
-    font-size: 1.5rem;
+    color: #E0E722;
+    font-size: 1.3rem;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
+
+.carousel-item:nth-child(even){
+  background-color: black;
+}
+.carousel-item:nth-child(odd){
+  background-color: black;
+}
+.carousel-inner{
+  background-color: black;
+}
+
+/*p:nth-child(2) {*/
+/*  background-color: white;*/
+/*}*/
+
+
+/*p:nth-child(3) {*/
+/*  background-color: white;*/
+/*}*/
