@@ -11,6 +11,8 @@ import { AppComponent } from '../../app.component';
 export class HomePageComponent {
   constructor(private appComponent: AppComponent, private router: Router) {}
 
+
+
   ngOnInit(): void {
     if (!sessionStorage.getItem('token')) {
       this.router.navigate(['/']);
