@@ -9,9 +9,6 @@ const loginUrl = url + '/login';
   providedIn: 'root',
 })
 export class LoginService {
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
   constructor(private http: HttpClient) {}
 

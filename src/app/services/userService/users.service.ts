@@ -37,19 +37,19 @@ export class UserService {
 
   // add validation
   registerUser(user: User): Observable<User> {
-    return this.http
-      .post<User>(
-        `${userUrl}/add`,
-        {
-          username: user.username,
-          password: user.password,
-          country: user.country,
-          points: user.points,
-          email: user.email,
-        },
-        this.httpOptions
-      )
-      .pipe(catchError(this.handleError));
+      return this.http
+        .post<User>(
+          `${userUrl}/add`,
+          {
+            username: user.username,
+            password: user.password,
+            country: user.country,
+            points: user.points,
+            email: user.email,
+          },
+          this.httpOptions
+        )
+        .pipe(catchError(this.handleError));
   }
 
   updateUser(user: User): Observable<User> {

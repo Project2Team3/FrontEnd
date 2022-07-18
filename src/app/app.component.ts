@@ -19,4 +19,18 @@ export class AppComponent {
     sessionStorage.setItem('user', '');
     this.router.navigate(['/'])
   }
+
+  updateSessionStorage(body: { id: any; username: any; country: any; points: any; email: any; }) {
+    sessionStorage.setItem(
+      'user',
+      JSON.stringify({
+        id: body.id,
+        username: body.username,
+        country: body.country,
+        points: body.points,
+        email: body.email,
+      })
+    );
+    console.log(sessionStorage.getItem("user"))
+  }
 }

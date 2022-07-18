@@ -41,6 +41,10 @@ a:hover, button:hover{
   cursor: pointer;
 }
 
+/*strong:hover, h2:hover{*/
+/*  cursor: pointer;*/
+/*}*/
+
 a:link {
   text-decoration: inherit;
   color: inherit;
@@ -56,3 +60,5 @@ a:visited {
 input, select {
   color: black;
 }
+
+

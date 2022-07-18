@@ -20,7 +20,6 @@ import { QuestionOptionsComponent } from './components/question-options/question
 import { QuestionPickedComponent } from './components/question-picked/question-picked.component';
 import { HomeButtonComponent } from './components/home-button/home-button.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -65,7 +64,7 @@ const routes: Routes = [
     QuestionOptionsComponent,
     QuestionPickedComponent,
     HomeButtonComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,

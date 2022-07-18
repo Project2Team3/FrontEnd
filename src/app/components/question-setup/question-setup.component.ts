@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./question-setup.component.css'],
 })
 export class QuestionSetupComponent {
-  constructor(private opentdbService: OpentdbService, private router: Router) {}
+  constructor(private openTriviaDBService: OpentdbService, private router: Router) {}
 
   questions: Question[] = Question.questions;
 
@@ -21,7 +21,7 @@ export class QuestionSetupComponent {
   options: string[] = [];
 
   async questionSetup(): Promise<void> {
-    let data = await this.opentdbService.getQuestions(
+    let data = await this.openTriviaDBService.getQuestions(
       this.amount,
       this.category,
       this.difficulty,

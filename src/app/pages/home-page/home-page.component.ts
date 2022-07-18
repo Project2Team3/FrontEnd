@@ -1,6 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Question } from 'src/app/models/question';
-import { OpentdbService } from '../../services/opentdbService/opentdb.service';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
 

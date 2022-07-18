@@ -21,6 +21,7 @@ export class LoginComponent {
   constructor(
     private loginService: LoginService,
     private router: Router,
+    private appComponent:AppComponent
   ) {}
 
   changeToRegister(): void {
@@ -48,17 +49,8 @@ export class LoginComponent {
 
           let body = response.body;
 
-          sessionStorage.setItem(
-            'user',
-            JSON.stringify({
-              id: body.id,
-              username: body.username,
-              country: body.country,
-              points: body.points,
-              email: body.email,
-            })
-          );
-          console.log(sessionStorage.getItem("user"))
+          this.appComponent.updateSessionStorage(body);
+
           this.router.navigate(['/home']);
         },
         error: () => {

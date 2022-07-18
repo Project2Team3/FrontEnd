@@ -8,7 +8,6 @@
 }
 
 #questionContainer {
-  border: #66FCF1 solid 5px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -28,6 +27,19 @@
 #questionForm label {
   align-self: stretch;
   margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#doneButton {
+  border: pink solid 3px;
+  background-color: inherit;
+  border-radius: 0.5em;
+  color: white;
+}
+#end {
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
