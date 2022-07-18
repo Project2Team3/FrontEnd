@@ -24,7 +24,6 @@ export class FriendsService {
   }
 
   addFriendByCurrentUserIdAndFriendId(currentUserId: number, friendId: number): Observable<String> {
-    console.log(`${friendUrl}/add?currentUserId=${currentUserId}&friendId=${friendId}`)
     return this.http
       .get<String>(`${friendUrl}/add?currentUserId=${currentUserId}&friendId=${friendId}`,this.httpOptions)
       .pipe(catchError(this.handleError));

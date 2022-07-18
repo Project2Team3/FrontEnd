@@ -1,6 +1,11 @@
 <div class="userCard">
-  <h3 *ngIf="active === 'picked' || active === 'question'">Points: {{ pointsAccumulated }}</h3>
-  <div id="questionContainer" *ngIf="active === 'picked' || active === 'question'">
+  <h3 *ngIf="active === 'picked' || active === 'question'">
+    Points: {{ pointsAccumulated }}
+  </h3>
+  <div
+    id="questionContainer"
+    *ngIf="active === 'picked' || active === 'question'"
+  >
     <h5 [innerHTML]="questionText"></h5>
     <p [innerText]="timeLeft"></p>
     <app-question-options
@@ -21,10 +26,18 @@
   </div>
   <div *ngIf="active === 'end'" id="end">
     <h2><b>Results</b></h2>
-    <p><b>Game Points:</b> {{pointsAccumulated}}</p>
-    <p><b>Global Points:</b> {{currentUserJSON.points}}</p>
-    <p><b>Total Points:</b> {{pointsAccumulated + currentUserJSON.points}}</p>
-    <button [disabled]="buttonStatus === 'Loading'" id="doneButton" (click)="onDoneButtonClick()">{{buttonStatus}}</button>
+    <p><b>Game Points:</b> {{ pointsAccumulated }}</p>
+    <p><b>Global Points:</b> {{ currentUserJSON.points }}</p>
+    <p><b>Total Points:</b> {{ pointsAccumulated + currentUserJSON.points }}</p>
+    <button
+      [disabled]="buttonStatus === 'Loading'"
+      id="doneButton"
+      (click)="onDoneButtonClick()"
+    >
+      {{ buttonStatus }}
+    </button>
   </div>
-  <app-home-button *ngIf="active === 'picked' || active === 'question'"></app-home-button>
+  <app-home-button
+    *ngIf="active === 'picked' || active === 'question'"
+  ></app-home-button>
 </div>
