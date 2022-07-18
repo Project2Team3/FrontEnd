@@ -1,10 +1,13 @@
 #carouselLeaderboard {
     border-radius: 0.5em;
     border: #66FCF1 solid 5px;
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 750px;
+    width: 750px; 
     margin: 15px;
+}
+
+p {
+    color: #FF4949;
+    font-size: 1.5rem;
 }
