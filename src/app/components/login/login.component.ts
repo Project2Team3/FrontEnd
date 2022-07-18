@@ -43,7 +43,6 @@ export class LoginComponent {
         next: (response) => {
           this.isLoading = false;
           const token = response.headers.get('user-token');
-          console.log(token)
 
           sessionStorage.setItem('token', token);
 
