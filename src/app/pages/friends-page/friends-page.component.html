@@ -1,17 +1,61 @@
 <div>
   <h1>
-    <strong>Friends</strong>
+    <strong>{{title}}</strong>
+    <a id="switchMode" (click)="changeTitle()">(switch)</a>
   </h1>
 </div>
 <div class="userCard">
   <app-navigation></app-navigation>
-  <h3>Friends</h3>
-  <ul>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-    <li>Friend1</li>
-  </ul>
+  <div id="friendsList"
+       *ngIf="title === 'Friends'"
+  >
+    <input
+      class="listInput"
+      [(ngModel)]="friendUsername"
+      (ngModelChange)="filterFriendsList()"
+      type="text"
+      name="friendUsername"
+      maxlength="50"
+      placeholder="Search..."
+    />
+    <div class="listContainer">
+      <div *ngIf="active === 'list'">
+        <div
+          (click)="moreInfo($event)"
+          class="friendsListIndividual"
+          *ngFor="let user of friendsList"
+        >{{user.username}}</div>
+      </div>
+      <div class="friendInfo" *ngIf="active === 'info'">
+        <div class="infoIndividual" id="backInfo" (click)="onBack()"><b>Back</b></div>
+        <div class="infoIndividual"><b>ID:</b>{{selectedFriend.id}}</div>
+        <div class="infoIndividual"><b>Username:</b>{{selectedFriend.username}}</div>
+        <div class="infoIndividual"><b>Email:</b>{{selectedFriend.email}}</div>
+        <div class="infoIndividual"><b>Points:</b>{{selectedFriend.points}}</div>
+        <div class="infoIndividual"><b>Country:</b> {{selectedFriend.country}}</div>
+      </div>
+      <div *ngIf="friendsList.length === 0" class="friendsListIndividual">Such Emptiness...</div>
+    </div>
+  </div>
+  <div id="addFriendsList"
+       *ngIf="title === 'Add Friends'"
+  >
+    <input
+      class="listInput"
+      [(ngModel)]="friendUsername"
+      (ngModelChange)="filterAddFriendsList()"
+      type="text"
+      name="friendUsername"
+      maxlength="50"
+      placeholder="Search..."
+    />
+    <div class="listContainer">
+      <div
+        (click)="addFriend($event)"
+        class="addFriendsListIndividual"
+        *ngFor="let user of addFriendsList"
+      >{{user.username}}</div>
+      <div *ngIf="addFriendsList.length === 0" class="addFriendsListIndividual" id="emptiness">Such Emptiness...</div>
+    </div>
+  </div>
 </div>

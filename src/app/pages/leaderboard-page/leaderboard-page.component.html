@@ -1,30 +1,29 @@
 <div>
-  <h1>
+  <h2>
     <strong>Leaderboard</strong>
-  </h1>
+  </h2>
 </div>
 <div class="userCard">
   <app-navigation></app-navigation>
   <div class="container">
-<!--    <h1>All Time Leaders</h1>-->
-    <Table class="table table-dark" id="test">
+    <Table class="table" id="test">
       <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>Points</th>
-      </tr>
-      <tr
-        class="list"
-        *ngFor="let u of users; let i = index"
-        [style.color]="(i + 1) % 2 == 0 ? 'red' : 'gold'"
-      >
-        <td>{{ i + 1 }}</td>
-        <td>{{ u.username }}</td>
-        <td id="points">{{ u.points }}</td>
-      </tr>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Points</th>
+        </tr>
+        <tr
+          class="list"
+          *ngFor="let u of users; let i = index"
+          [style.color]="(i + 1) % 2 != 0 ? 'dodgerblue' : 'rgb(224, 231, 34)'"
+          style="font-size: 0.95rem"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ u.username }}</td>
+          <td id="points">{{ u.points }}</td>
+        </tr>
       </thead>
     </Table>
   </div>
 </div>
-

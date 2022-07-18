@@ -1,46 +1,29 @@
 li {
     list-style-type: none;
     color: #FF4949;
-    margin-left: 33%;
-    font-size: 1.5rem;
+    margin-left: 20%;
+    font-size: 1.2rem;
 }
 
-h1 {
-    color: #3AB0FF;
+h2 {
+    color: white;
 }
 
 th {
-    color: #3AB0FF;
+  font-size: .95rem;
+    color: white;
 }
 
-#points{
-    text-align: center;
-}
-
-.list {
-    color:#FF4949;
-}
-
-#test {
-    background-color: #bde9ba;
-    }
-
-.first{
-    color: red;
-}
-
-.second {
-    color: gold;
-}
-
-.third {
-    color: blue;
-}
-
-tr {
-    background-color: gold;
+table {
+    width: 50%;
+    font-size: 1.6rem;
+    background-color: #1F2833;
+    margin: 0;
 }
 
 .container {
-  overflow-y: scroll;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

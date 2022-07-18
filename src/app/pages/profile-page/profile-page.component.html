@@ -4,10 +4,30 @@
   </h1>
 </div>
 <div class="userCard">
-      <app-navigation></app-navigation>
-      <li class="list-group-item">ID {{user.id}}</li>
-      <li class="list-group-item">Username {{user.username}}</li>
-      <li class="list-group-item">Password {{user.password}}</li>
-      <li class="list-group-item">Country {{user.country}}</li>
-      <li class="list-group-item">Email {{user.email}}</li>
+  <app-navigation></app-navigation>
+  <div class="list">
+    <li class="listItem">ID: {{ user.id }}</li>
+    <li class="listItem">Username: {{ user.username }}</li>
+    <li class="listItem">
+      Password: {{ user.password }}
+    </li>
+    <li class="listItem">Country: {{ user.country }}</li>
+    <li class="listItem">Points: {{ user.points }}</li>
+    <li class="listItem">Email: {{ user.email }}</li>
+    <li class="listItem" id="changePassword" (click)="onChangePasswordListItemClick()">
+      <strong *ngIf="active === 'title'">Change password</strong>
+      <form *ngIf="active === 'form'" (ngSubmit)="changePassword($event)">
+        <input
+          (click)="passwordInput($event)"
+          [(ngModel)]="user.password"
+          type="text"
+          name="password"
+          placeholder="New Password:"
+          maxlength="50"
+          required
+        />
+        <button type="submit" (click)="onChangeButtonClicked($event)"><b>Change</b></button>
+      </form>
+    </li>
   </div>
+</div>
