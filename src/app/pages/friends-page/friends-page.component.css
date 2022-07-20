@@ -39,12 +39,10 @@
 .addFriendsListIndividual:hover {
   cursor: pointer;
   border-color: green;
-  /*transition: background-color 0.5s;*/
 }
 .friendsListIndividual:hover {
   cursor: pointer;
   border-color: pink;
-  /*transition: background-color 0.5s;*/
 }
 
 #emptiness:hover{
@@ -77,6 +75,4 @@
 #backInfo:hover{
   cursor: pointer;
   border-color: pink;
-  /*opacity: 0.5;*/
-  /*color: whitesmoke;*/
 }

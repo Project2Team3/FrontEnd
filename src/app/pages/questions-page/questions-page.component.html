@@ -25,10 +25,10 @@
     <h1>Get Ready To Rumble!</h1>
   </div>
   <div *ngIf="active === 'end'" id="end">
-    <h2><b>Results</b></h2>
-    <p><b>Game Points:</b> {{ pointsAccumulated }}</p>
-    <p><b>Global Points:</b> {{ currentUserJSON.points }}</p>
-    <p><b>Total Points:</b> {{ pointsAccumulated + currentUserJSON.points }}</p>
+    <h2><strong>Results</strong></h2>
+    <p><strong>Game Points:</strong> {{ pointsAccumulated }}</p>
+    <p><strong>Global Points:</strong> {{ currentUserJSON.points }}</p>
+    <p><strong>Total Points:</strong> {{ pointsAccumulated + currentUserJSON.points }}</p>
     <button
       [disabled]="buttonStatus === 'Loading'"
       id="doneButton"

@@ -20,7 +20,6 @@ export class LeaderboardComponent implements OnInit {
       this.users.sort(function (a, b) {
         return b.points - a.points;
       });
-      console.log(this.users);
     });
     this.users = this.users.slice(0, 3);
   }

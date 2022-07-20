@@ -1,5 +1,4 @@
-import { LoginService } from './../../services/loginService/login.service';
-import { AppComponent } from './../../app.component';
+import { AppComponent } from '../../app.component';
 import { UserService } from 'src/app/services/userService/users.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
@@ -36,7 +35,6 @@ this.appComponent.signOut();
     this.userService.findUserById(userJSON.id).subscribe({
       next: (data) => {
         this.user = data;
-        console.log(this.user);
       }
     })
   }
@@ -59,8 +57,8 @@ this.appComponent.signOut();
     this.router.navigate(['/home']);
 
   }
- 
- 
+
+
   passwordInput(event: any) {
     event.stopPropagation()
   }

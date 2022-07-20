@@ -1,10 +1,12 @@
-.list {
-  display: flex;
-  flex-direction: column;
+ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   align-items: center;
   width: 400px;
   flex-grow: 1;
-  /*background-color: #1F2833;*/
+  display: flex;
+  flex-direction: column;
 }
 
 .listItem{
@@ -44,12 +46,8 @@ input {
 
 button {
   border-radius: 0.25em;
-  /*border: 3px solid white;*/
   border: none;
   color: #1F2833;
   background-color: pink;
-  /*height: 30px;*/
 }
-button:hover {
 
-}

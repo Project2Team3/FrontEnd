@@ -5,7 +5,7 @@
 </div>
 <div class="userCard">
   <app-navigation></app-navigation>
-  <div class="list">
+  <ul>
     <li class="listItem">ID: {{ user.id }}</li>
     <li class="listItem">Username: {{ user.username }}</li>
     <li class="listItem">
@@ -26,8 +26,9 @@
           maxlength="50"
           required
         />
-        <button type="submit" (click)="onChangeButtonClicked($event)"><b>Change</b></button>
+        <button type="submit" (click)="onChangeButtonClicked($event)"><strong>Change</strong></button>
       </form>
     </li>
-  </div>
+  </ul>
+
 </div>

@@ -1,6 +1,6 @@
 <div id="questionPickedContainer">
-  <b *ngIf="status.includes('INCORRECT!') || status.includes('TIME')"><h2 [innerHTML]="status" style="color: red"></h2></b>
-  <b *ngIf="!status.includes('INCORRECT!') && !status.includes('TIME')"><h2 [innerHTML]="status" style="color: green"></h2></b>
+  <strong *ngIf="status.includes('INCORRECT!') || status.includes('TIME')"><h2 [innerHTML]="status" style="color: red"></h2></strong>
+  <strong *ngIf="!status.includes('INCORRECT!') && !status.includes('TIME')"><h2 [innerHTML]="status" style="color: green"></h2></strong>
   <br />
   <p [innerHTML]="answer"></p>
   <p [innerHTML]="yourAnswer"></p>

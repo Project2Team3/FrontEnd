@@ -19,8 +19,7 @@ export class FriendsPageComponent implements OnInit {
   existingFriends = new Map();
   selectedFriend:any = {};
 
-  // @ts-ignore
-  currentUserString: string = sessionStorage.getItem("user");
+  currentUserString: string | null = sessionStorage.getItem("user");
   currentUserJSON:any;
 
   title:string = "Friends";
@@ -33,14 +32,15 @@ export class FriendsPageComponent implements OnInit {
       this.appComponent.signOut();
       return;
     }
-    this.currentUserJSON = JSON.parse(this.currentUserString)
+    if (typeof this.currentUserString === "string") {
+      this.currentUserJSON = JSON.parse(this.currentUserString)
+    }
     this.friendService.findFriendsById(this.currentUserJSON.id).subscribe({
       next:result => {
         for (let user of result){
           this.friendsList.push(user)
           this.existingFriends.set(user.username, user)
         }
-        this.friendsList.slice(0,8)
         this.existingFriends.set(this.currentUserJSON.username, this.currentUserJSON)
         this.userService.findAllUsers().subscribe({
           next: value => {

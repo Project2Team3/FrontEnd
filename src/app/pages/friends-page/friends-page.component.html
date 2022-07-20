@@ -27,12 +27,12 @@
         >{{user.username}}</div>
       </div>
       <div class="friendInfo" *ngIf="active === 'info'">
-        <div class="infoIndividual" id="backInfo" (click)="onBack()"><b>Back</b></div>
-        <div class="infoIndividual"><b>ID:</b>{{selectedFriend.id}}</div>
-        <div class="infoIndividual"><b>Username:</b>{{selectedFriend.username}}</div>
-        <div class="infoIndividual"><b>Email:</b>{{selectedFriend.email}}</div>
-        <div class="infoIndividual"><b>Points:</b>{{selectedFriend.points}}</div>
-        <div class="infoIndividual"><b>Country:</b> {{selectedFriend.country}}</div>
+        <div class="infoIndividual" id="backInfo" (click)="onBack()"><strong>Back</strong></div>
+        <div class="infoIndividual"><strong>ID:</strong>{{selectedFriend.id}}</div>
+        <div class="infoIndividual"><strong>Username:</strong>{{selectedFriend.username}}</div>
+        <div class="infoIndividual"><strong>Email:</strong>{{selectedFriend.email}}</div>
+        <div class="infoIndividual"><strong>Points:</strong>{{selectedFriend.points}}</div>
+        <div class="infoIndividual"><strong>Country:</strong> {{selectedFriend.country}}</div>
       </div>
       <div *ngIf="friendsList.length === 0" class="friendsListIndividual">Such Emptiness...</div>
     </div>
