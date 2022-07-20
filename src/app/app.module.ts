@@ -19,8 +19,6 @@ import { QuestionsPageComponent } from './pages/questions-page/questions-page.co
 import { QuestionOptionsComponent } from './components/question-options/question-options.component';
 import { QuestionPickedComponent } from './components/question-picked/question-picked.component';
 import { HomeButtonComponent } from './components/home-button/home-button.component';
-import { ChangeInfoComponent } from './pages/change-info/change-info/change-info.component';
-
 
 const routes: Routes = [
   {
@@ -46,13 +44,7 @@ const routes: Routes = [
   {
     path: 'quiz',
     component: QuestionsPageComponent,
-  },
-
-  {
-    path: 'changeuserinfo',
-    component: ChangeInfoComponent,
-  },
-
+  }
 ];
 
 @NgModule({
@@ -73,7 +65,6 @@ const routes: Routes = [
     QuestionPickedComponent,
     HomeButtonComponent,
     LeaderboardComponent,
-    ChangeInfoComponent
   ],
   imports: [
     BrowserModule,

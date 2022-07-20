@@ -11,4 +11,5 @@ export class QuestionPickedComponent {
   @Input() status: string = '';
   @Input() answer: string = '';
   @Input() yourAnswer: string = '';
+  @Input() color: string = '';
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from './models/user';
 import {Router} from "@angular/router";
 
 @Component({
@@ -20,5 +19,16 @@ export class AppComponent {
     this.router.navigate(['/'])
   }
 
-
+  updateSessionStorage(body: { id: any; username: any; country: any; points: any; email: any; }) {
+    sessionStorage.setItem(
+      'user',
+      JSON.stringify({
+        id: body.id,
+        username: body.username,
+        country: body.country,
+        points: body.points,
+        email: body.email,
+      })
+    );
+  }
 }

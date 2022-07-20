@@ -1,12 +1,11 @@
 <div>
-  <h1>
+  <h2>
     <strong>Leaderboard</strong>
-  </h1>
+  </h2>
 </div>
 <div class="userCard">
   <app-navigation></app-navigation>
   <div class="container">
-    <!--    <h1>All Time Leaders</h1>-->
     <Table class="table" id="test">
       <thead>
         <tr>
@@ -17,8 +16,8 @@
         <tr
           class="list"
           *ngFor="let u of users; let i = index"
-          [style.color]="(i + 1) % 2 == 0 ? 'red' : 'gold'"
-          style="font-size: 1"
+          [style.color]="(i + 1) % 2 != 0 ? 'dodgerblue' : 'rgb(224, 231, 34)'"
+          style="font-size: 15px"
         >
           <td>{{ i + 1 }}</td>
           <td>{{ u.username }}</td>

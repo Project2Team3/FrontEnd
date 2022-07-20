@@ -25,6 +25,8 @@ body {
 .userCard {
   height: 600px;
   width: 800px;
+  /*height: clamp(200px, 600px);*/
+  /*width: 100%;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +43,10 @@ a:hover, button:hover{
   cursor: pointer;
 }
 
+/*strong:hover, h2:hover{*/
+/*  cursor: pointer;*/
+/*}*/
+
 a:link {
   text-decoration: inherit;
   color: inherit;
@@ -56,3 +62,5 @@ a:visited {
 input, select {
   color: black;
 }
+
+
